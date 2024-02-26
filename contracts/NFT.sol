@@ -16,7 +16,7 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
     mapping(uint256 => uint256) public tokenIdToPrice;
     mapping(uint256 => address) public tokenIdToSeller;
 
-    constructor() ERC721("Z_Breed", "Z-B") {}
+    constructor() ERC721("Z-Breed", "ZB") {}
 
     function generateCharacter(
         uint256 tokenId
@@ -54,10 +54,10 @@ contract NFTMarketplace is ERC721URIStorage, Ownable {
     function getTokenURI(uint256 tokenId) public view returns (string memory) {
         bytes memory dataURI = abi.encodePacked(
             "{",
-            '"name": "Z-BREED #',
+            '"name": "Z-BREED #2',
             tokenId.toString(),
             '",',
-            '"description": "Battles on chain",',
+            '"description": "coin",',
             '"image": "',
             generateCharacter(tokenId),
             '"',
